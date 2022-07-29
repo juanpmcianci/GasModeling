@@ -53,6 +53,7 @@ def Ornstein_Uhlenbeck(theta:callable,
     x=np.zeros((N+1,dims))
     x[0]=x0
     
+    #Does the EM step
     for i in range(N):
         x[i+1]=x[i]+h*theta(t)*(mu-x[i])+sigma*h**0.5*np.random.standard_normal(dims)
         t+=h
