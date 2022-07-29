@@ -54,7 +54,7 @@ def Ornstein_Uhlenbeck(theta:callable,
     x[0]=x0
     
     for i in range(N):
-        x[i+1]=x[i]+h*theta(t)*(mu-x[i])+sigma*h**0.5*np.random.standard_normal()
+        x[i+1]=x[i]+h*theta(t)*(mu-x[i])+sigma*h**0.5*np.random.standard_normal(dims)
         t+=h
     return x
 
